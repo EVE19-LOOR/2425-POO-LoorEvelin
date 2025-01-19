@@ -1,71 +1,56 @@
-# Clase base: Animal
+# Clase base
 class Animal:
     def __init__(self, nombre, edad):
-        # Encapsulación: atributo privado
-        self.__nombre = nombre  # Atributo privado
-        self.edad = edad        # Atributo público
+        self.__nombre = nombre
+        self.__edad = edad
 
-    # Método para obtener el nombre (getter)
     def get_nombre(self):
         return self.__nombre
 
-    # Método para establecer el nombre (setter)
-    def set_nombre(self, nombre):
-        self.__nombre = nombre
+    def get_edad(self):
+        return self.__edad
 
-    # Método genérico
+    # Este método será diferente para cada tipo de animal
     def hacer_sonido(self):
-        return "El animal hace un sonido"
+        pass
 
-# Clase derivada: Perro
+# Clase para representar un perro
 class Perro(Animal):
     def __init__(self, nombre, edad, raza):
-        # Llamar al constructor de la clase base
         super().__init__(nombre, edad)
-        self.raza = raza  # Atributo propio de la clase derivada
+        self.__raza = raza
 
-    # Sobrescritura de método (polimorfismo)
     def hacer_sonido(self):
-        return "El perro ladra"
+        return "¡Guau!"
 
-    # Método adicional
-    def traer_pelota(self):
-        return f"{self.get_nombre()} está trayendo la pelota."
+    def get_raza(self):
+        return self.__raza
 
-# Clase derivada: Gato
+# Clase para representar un gato
 class Gato(Animal):
     def __init__(self, nombre, edad, color):
-        # Llamar al constructor de la clase base
         super().__init__(nombre, edad)
-        self.color = color  # Atributo propio de la clase derivada
+        self.__color = color
 
-    # Sobrescritura de método (polimorfismo)
     def hacer_sonido(self):
-        return "El gato maúlla"
+        return "¡Miau!"
 
-# Función principal para demostrar la funcionalidad
+    def get_color(self):
+        return self.__color
+
+# Función principal para mostrar cómo funciona
 def main():
-    # Crear instancias de las clases
-    perro = Perro("Max", 5, "Labrador")
-    gato = Gato("Luna", 3, "Gris")
+    perro = Perro("Rex", 5, "Labrador")
+    gato = Gato("Miau", 3, "Negro")
 
-    # Encapsulación: uso de getter y setter
-    print(f"Nombre del perro (antes): {perro.get_nombre()}")
-    perro.set_nombre("Rocky")
-    print(f"Nombre del perro (después): {perro.get_nombre()}")
+    print(f"El perro se llama {perro.get_nombre()}, tiene {perro.get_edad()} años y es un {perro.get_raza()}.")
+    print(f"Sonido del perro: {perro.hacer_sonido()}")
 
-    # Herencia: usar métodos heredados
-    print(f"Edad del perro: {perro.edad}")
-    print(f"Edad del gato: {gato.edad}")
+    print(f"El gato se llama {gato.get_nombre()}, tiene {gato.get_edad()} años y es de color {gato.get_color()}.")
+    print(f"Sonido del gato: {gato.hacer_sonido()}")
 
-    # Polimorfismo: llamar a métodos sobrescritos
-    print(perro.hacer_sonido())  # El perro ladra
-    print(gato.hacer_sonido())  # El gato maúlla
-
-    # Métodos específicos de las clases derivadas
-    print(perro.traer_pelota())
-
-# Ejecutar el programa
 if __name__ == "__main__":
     main()
+
+
 
