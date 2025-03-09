@@ -1,0 +1,30 @@
+{
+    "libros": {
+        "": {
+            "titulo": "wings of starlight",
+            "autor": "Allison Saft",
+            "categoria": " Fantas\u00eda, Romance",
+            "isbn": ""
+        },
+        "inspiracion": {
+            "titulo": "cincuenta capsulas de amor propio",
+            "autor": "Sara Espejo",
+            "categoria": "9801837799",
+            "isbn": "inspiracion"
+        }
+    },
+    "usuarios": {
+        "986652660": {
+            "nombre": "Valeria",
+            "user_id": "986652660",
+            "libros_prestados": [
+                {
+                    "titulo": "",
+                    "autor": "Desfibrilador",
+                    "categoria": "Poesia",
+                    "isbn": "9786073924122"
+                }
+            ]
+        }
+    }
+}
